@@ -6,6 +6,8 @@ import { loginData } from '../../Services/axios.service';
 import { ToastifyError, ToastifySuccess } from "../../Services/toastify.service";
 import { useNavigate } from 'react-router-dom';
 import { loginInterface } from '../../interface/global.interface';
+import {useDispatch} from 'react-redux';
+import { login } from './loginSlice';
 
 
 
@@ -14,6 +16,7 @@ const Login = () => {
     const [password,setPassword] = useState<string>('');
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const submitHandler = async(e:any) =>{
         e.preventDefault();
@@ -25,6 +28,7 @@ const Login = () => {
 
         if(response.status){
             navigate('/dashboard')
+            dispatch(login());
             ToastifySuccess(response.data.message)
         }
         else{

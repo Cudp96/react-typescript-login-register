@@ -1,8 +1,10 @@
-
+import Product from '../../components/Product/index.tsx'
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <>
+    <Product/>
+    </>
   )
 }
 

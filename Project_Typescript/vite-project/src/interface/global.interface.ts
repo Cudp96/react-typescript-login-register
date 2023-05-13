@@ -20,3 +20,11 @@ export interface loginInterface{
     email: string;
     password:string;
 }
+
+export interface CountStateInterface {
+    count: number;
+    arr: Array<string>;
+}
+export interface loggedInterface {
+    isLoggedIn: boolean;
+}
