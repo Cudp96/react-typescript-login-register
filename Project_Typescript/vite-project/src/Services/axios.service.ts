@@ -21,3 +21,8 @@ export const getProduct = async () => {
     return response.data;
     // console.log(response.data);
 }
+export const getSingleProduct = async (id:any) => {
+const response = await axios.get(`${productUrl}/${id}`);
+    return response.data;
+    // console.log(response.data);
+}

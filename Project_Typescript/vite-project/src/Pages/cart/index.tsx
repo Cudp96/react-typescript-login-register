@@ -1,12 +1,10 @@
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { remove } from "../../components/Product/productSlice";
+import Navbar from "../../components/navbar";
 
 const Cart = () => {
 
   const dispatch = useDispatch();
-
-  const items = useSelector((state: any) => state.product)
 
   const products = useSelector((state: any) => state.product)
 
@@ -17,21 +15,15 @@ const Cart = () => {
 
   return (
     <>
-      <div className="navbar" style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <h1>Cart</h1>
-        <div className="navlinks " >
-          <Link to='/dashboard'  className="navLink">Home</Link>
-          <Link to='/cart'  className="navLink">Cart</Link>
-        </div>
-        <span className="cartCount">Cart Items :{items.length}</span>
-      </div>
-
+    <Navbar/>
       <div>
         <div className="cartWrapper">
+          <h3>Cart</h3>
           {products.map((product: any) => (
             <div key={product.id} className="cartCard">
               <img src={product.images} alt="" />
               <h5>{product.title}</h5>
+              <h5> {product.category.name}</h5>
               <h5>$ {product.price}</h5>
               <button
                 className="btn"
@@ -47,4 +39,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default Cart;

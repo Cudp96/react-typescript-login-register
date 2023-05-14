@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import Dashboard from './Pages/dashboard';
 // import Counter from './components/counter/counter';
 import Cart from './Pages/cart';
+import ProductPage from './Pages/productPage';
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />} />
         {/* <Route path='/counter' element={<Counter />} /> */}
         <Route path='/cart' element={<Cart />} />
+        <Route path='/dashboard/:id' element={<ProductPage />} />
       </Routes>
       <ToastContainer />
     </>
